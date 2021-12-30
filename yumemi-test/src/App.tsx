@@ -97,9 +97,6 @@ function App(props: HighchartsReact.Props) {
 
   return (
 <>
-<AppBar position="fixed">
-        <Toolbar>都道府県別人口グラフ</Toolbar>
-      </AppBar>
     <Box sx={{ display: 'flex' }}>
       <FormControl component="fieldset" variant="standard">
         <FormLabel component="legend">都道府県</FormLabel>
