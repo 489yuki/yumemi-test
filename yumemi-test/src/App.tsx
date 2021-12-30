@@ -109,8 +109,6 @@ function App(props: HighchartsReact.Props) {
             <CheckBoxItem key={a.prefCode} prefName={a.prefName} checked={selectedList[a.prefCode - 1]} handleChange={handleChange} prefCode={a.prefCode}/>
           ))}
           </Grid>
-          
-          
         </FormGroup>
       </FormControl>
     </Box>
