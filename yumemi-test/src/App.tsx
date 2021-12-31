@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
-import {Box, FormControl, FormGroup, FormLabel, Grid, } from '@material-ui/core';
 import CheckBoxItem from './component/checkBoxItem';
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
@@ -40,6 +39,7 @@ function App(props: HighchartsReact.Props) {
       },
       categories: ['1960','1965','1970','1975','1980', '1985', '1990', '1995', '2000', '2005', '2010', '2015', '2020', '2025', '2030', '2035','2040','2045']
     },
+    // state参照
     series: chartDataList
 };
 
@@ -97,18 +97,15 @@ function App(props: HighchartsReact.Props) {
 
   return (
 <>
-    <Box sx={{ display: 'flex' }}>
-      <FormControl component="fieldset" variant="standard">
-        <FormLabel component="legend">都道府県</FormLabel>
-        <FormGroup>
-          <Grid container spacing={1}>
+<header style={{color:"white",padding: 15,background: "#39C7DC"}}>都道府県別人口グラフ</header>
+<p>都道府県</p>
+    <div>
+        <div style={{display:'flex',flexWrap:"wrap",}}>
           {prefList.map((a:PrefData) => (
             <CheckBoxItem key={a.prefCode} prefName={a.prefName} checked={selectedList[a.prefCode - 1]} handleChange={handleChange} prefCode={a.prefCode}/>
           ))}
-          </Grid>
-        </FormGroup>
-      </FormControl>
-    </Box>
+          </div>
+    </div>
     {
       chartDataList.length !== 0?
     <HighchartsReact
@@ -124,3 +121,5 @@ function App(props: HighchartsReact.Props) {
 }
 
 export default App;
+
+
